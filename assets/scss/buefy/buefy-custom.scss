@@ -1,11 +1,18 @@
 // Import Bulma's core
 @import '~bulma/sass/utilities/_all';
 
+
+
+
+
 // Set your colors
-$primary: #000000;
+$primary: #414fff;
 $primary-invert: findColorInvert($primary);
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
+
+$black: #434460;
+$black-invert: findColorInvert($black);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
@@ -56,6 +63,18 @@ $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
+
+
+
 // Import Bulma and Buefy styles
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
+
+// 커스텀할 모듈
+// @import "~bulma/sass/form/_all.sass"; 
+// @import "~bulma/sass/components/navbar.sass;
+
+@import '~bulma/sass/components/tabs.sass';
+
+// Tabs
+$tabs-link-padding: 10em 10em !default

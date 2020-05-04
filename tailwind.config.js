@@ -68,7 +68,7 @@ module.exports = {
       grey: '#b8c2cc',
       'grey-light': '#dae1e7',
       background: '#F9F9FF',
-      primary: '#4c56ff'
+      primary: '#414fff'
     },
 
     /*

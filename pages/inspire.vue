@@ -11,3 +11,16 @@
     </h3>
   </section>
 </template>
+
+<script>
+import { Vue, Component } from 'nuxt-property-decorator'
+import Card from '~/components/Card'
+
+@Component({
+  name: 'InspirePage',
+  components: { Card },
+  layout: 'admin'
+})
+export default class Inspire extends Vue {}
+</script>
+ㅊ
