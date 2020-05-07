@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   mode: 'universal',
   /*
@@ -27,7 +29,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/axios', '@/plugins/api-accessor'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,7 +54,27 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true
+    // baseURL: process.env.VUE_APP_BASE_API, // api 요청을 위한 BASE URL
+    // timeout: 5000, // request timeout
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // }
+  },
+  proxy: {
+    '/albums': {
+      target: 'https://jsonplaceholder.typicode.com/',
+      secure: false,
+      changeOrigin: true
+    }
+  },
+  dotenv: {
+    filename:
+      process.env.NODE_ENV === 'production'
+        ? '.env'
+        : '.env.' + process.env.NODE_ENV
+  },
   /*
    ** Build configuration
    */

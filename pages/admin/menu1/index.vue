@@ -1,42 +1,41 @@
 <template>
   <section class="section">
-    <div class="columns is-mobile">
-      <!-- Buefy 샘플 카드 1 -->
-      <card title="Free" icon="github-circle">
-        Open source on
-        <a href="https://github.com/buefy/buefy">GitHub</a>
-      </card>
-
-      <!-- Buefy 샘플 카드 2 -->
-      <card title="Responsive" icon="cellphone-link">
-        <b class="has-text-grey">Every</b>
-        component is responsive
-      </card>
-
-      <!-- Buefy 샘플 카드 3 -->
-      <card title="Modern" icon="alert-decagram">
-        Built with
-        <a href="https://vuejs.org/">Vue.js</a>
-        and
-        <a href="http://bulma.io/">Bulma</a>
-      </card>
-
-      <!-- Buefy 샘플 카드 4 -->
-      <card title="Lightweight" icon="arrange-bring-to-front"
-        >No other internal dependency</card
-      >
+    <div class="columns is-12 is-multiline">
+      <template v-for="(post, index) in posts">
+        <card
+          :key="index"
+          class="column is-3"
+          title="Responsive"
+          icon="cellphone-link"
+        >
+          {{ post.body }}
+        </card>
+      </template>
     </div>
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import Card from '~/components/Card'
+import Card from '~/components/Card.vue'
 
 @Component({
-  name: 'FirstMenuPage',
-  components: { Card },
+  components: {
+    Card
+  },
   layout: 'admin'
 })
-export default class FirstMenuPage extends Vue {}
+export default class FirstMenuPage extends Vue {
+  posts: Array<object> = []
+
+  created() {
+    this.$repositories.post.all().then((res: any) => {
+      if (res.status === 200 && res.data) {
+        this.posts = res.data
+      } else {
+        // Handle error here
+      }
+    })
+  }
+}
 </script>

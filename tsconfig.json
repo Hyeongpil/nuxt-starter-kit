@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
+    "importHelpers": true,
     "moduleResolution": "node",
     "lib": [
       "esnext",
@@ -16,9 +17,7 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
+      "~/*": ["./*"],
       "@/*": [
         "./*"
       ]

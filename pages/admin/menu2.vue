@@ -1,17 +1,37 @@
 <template>
   <section class="section">
-    두번째 메뉴 섹션
+    <div class="columns is-12 is-multiline">
+      <template v-for="(post, index) in posts">
+        <card
+          :key="index"
+          class="column is-3"
+          title="Responsive"
+          icon="cellphone-link"
+        >
+          {{ post.body }}
+        </card>
+      </template>
+    </div>
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import Card from '~/components/Card'
+import Card from '~/components/Card.vue'
+import { postStore } from '@/store'
 
 @Component({
-  name: 'SecondMenuPage',
-  components: { Card },
-  layout: 'admin'
+  components: {
+    Card
+  },
+  layout: 'admin',
+  async fetch() {
+    await postStore.get_posts()
+  }
 })
-export default class SecondMenuPage extends Vue {}
+export default class SecondMenuPage extends Vue {
+  private get posts() {
+    return postStore.allPosts
+  }
+}
 </script>
