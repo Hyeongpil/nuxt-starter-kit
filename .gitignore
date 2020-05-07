@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# cypress testing reports
+test/e2e/screenshots
+test/e2e/videos
