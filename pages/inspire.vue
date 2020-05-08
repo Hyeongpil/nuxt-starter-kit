@@ -14,7 +14,7 @@
 
 <script>
 import { Vue, Component } from 'nuxt-property-decorator'
-import Card from '~/components/Card'
+import Card from '~/components/UI/card/Card.vue'
 
 @Component({
   name: 'InspirePage',
