@@ -1,6 +1,7 @@
 // import Vue from 'vue'
 import { storiesOf } from '@storybook/vue'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import USAGE from './USAGE.md'
 import Card from './Card.vue'
 
 const label = 'Colors'
@@ -19,6 +20,13 @@ const value = select(label, options, defaultValue, groupId)
 const stories = storiesOf('Card', module)
 
 stories.addDecorator(withKnobs)
+
+stories.addParameters({
+  readme: {
+    content: USAGE,
+    sidebar: `<!-- PROPS -->`
+  }
+})
 
 stories.add('with a button', () => {
   return {

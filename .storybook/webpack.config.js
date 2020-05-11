@@ -1,9 +1,19 @@
 // webpack.config.js 
 const path = require('path'); 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const updateWebpackConfig = require('storybook-readme/vue/updateWebpackConfig');
+
  module.exports = async ({ config, mode }) => { 
-   config.resolve.extensions.push('.ts', '.tsx', '.vue', '.css', '.less', '.scss', '.sass', '.html'); 
-   config.module.rules.push({ 
+  updateWebpackConfig(config);
+
+  config.resolve.extensions.push('.ts', '.tsx', '.vue', '.css', '.less', '.scss', '.sass', '.html'); 
+
+  config.module.rules.push({
+    resourceQuery: /blockType=docs/,
+    use: ['storybook-readme/vue/docs-loader', 'html-loader', 'markdown-loader'],
+  });
+
+  config.module.rules.push({ 
      test: /\.ts$/, 
      exclude: /node_modules/, 
      use: [ 
@@ -40,7 +50,6 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
       ],
       include: path.resolve(__dirname, "../")
     });
-
 
    config.plugins.push(new ForkTsCheckerWebpackPlugin()); 
    return config;
