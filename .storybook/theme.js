@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming/create';
+import { create } from '@storybook/theming/create'
 
 export default create({
   base: 'light',
@@ -6,7 +6,7 @@ export default create({
   colorPrimary: '#414fff',
   colorSecondary: '#414fff',
 
-  margin:'100px',
+  margin: '100px',
   // UI
   appBg: 'white',
   appContentBg: 'white',
@@ -32,7 +32,7 @@ export default create({
   // inputTextColor: 'black',
   // inputBorderRadius: 4,
 
-  brandTitle: 'Starter',
+  brandTitle: 'Starter'
   // brandUrl: 'https://lerni.kr',
   // brandImage: 'https://lerni.kr/wp-content/uploads/2019/01/lerni-wlogo-1-e1548923862505.png',
 })

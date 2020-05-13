@@ -26,7 +26,7 @@ import { postStore } from '@/store'
   },
   layout: 'admin',
   async fetch() {
-    await postStore.get_posts()
+    await postStore.fetch_posts()
   }
 })
 export default class SecondMenuPage extends Vue {

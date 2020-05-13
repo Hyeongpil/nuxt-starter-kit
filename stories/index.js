@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import { configureReadme, addFooter, addHeader } from 'storybook-readme'
+import { configureReadme } from 'storybook-readme'
 
 // import './Button'
 // import './withCustomPreview'
@@ -14,9 +14,7 @@ import { configureReadme, addFooter, addHeader } from 'storybook-readme'
 configureReadme({
   // codeTheme: 'far',
   header: ``,
-  footer: `
-
-`
+  footer: ``
 })
 
 import './Guide'

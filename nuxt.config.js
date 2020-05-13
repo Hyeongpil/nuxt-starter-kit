@@ -45,22 +45,18 @@ module.exports = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
-    // '@nuxtjs/style-resources'
   ],
-  // styleResources: {
-  //   sass: ['@/assets/scss/main.scss']
-  // },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
     proxy: true
-    // baseURL: process.env.VUE_APP_BASE_API, // api 요청을 위한 BASE URL
-    // timeout: 5000, // request timeout
-    // headers: {
-    //   'Content-Type': 'application/json'
-    // }
+  },
+  // 미들웨어에 접근인증을 위해 추가
+  router: {
+    middleware: 'auth'
   },
   proxy: {
     '/albums': {

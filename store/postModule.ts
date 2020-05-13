@@ -16,7 +16,7 @@ export default class PostModule extends VuexModule {
   public post: IPost | null = null
 
   @Action
-  async get_posts() {
+  async fetch_posts() {
     const res = await repositories.post.all()
     if (res.data) this.SET_POSTS(res.data)
   }
