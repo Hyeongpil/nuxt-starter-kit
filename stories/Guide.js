@@ -1,25 +1,17 @@
 import { storiesOf } from '@storybook/vue'
 
 // import ButtonReadme from '../components/UI/buttons/README.md'
-import IntroduceGuide from './guides/Introduce.md'
 import InstallGuide from './guides/Install.md'
 import CodeStyleGuide from './guides/CodeStyle.md'
 
-storiesOf('Guide', module)
-  .addParameters({})
-  .add(
-    '1. Introduce',
-    () => {
-      return {}
-    },
-    {
-      readme: {
-        content: IntroduceGuide
-      }
+storiesOf('가이드', module)
+  .addParameters({
+    options: {
+      showPanel: false
     }
-  )
+  })
   .add(
-    '2. Get Started',
+    '1. 설치 및 빌드',
     () => {
       return {}
     },

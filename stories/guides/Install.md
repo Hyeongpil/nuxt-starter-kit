@@ -1,12 +1,12 @@
-# 1. 개발 환경 구성하기
+# 설치 및 빌드
 
 > 서비스연구담당 오동환 - 초안 작성 / 2020. 04.08 
 
 > 
 
-<!-- STORY -->
 
-## Build 환경
+
+## A. Build 환경
 
 사전에 (설치해야)갖추어야 할 개발도구는 다음과 같습니다.
 
@@ -66,7 +66,7 @@
 
 ​    
 
-## Build Setup
+## B. Build Setup
 
 ```bash
 # install dependencies
@@ -81,6 +81,18 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# storybook 실행 - 코딩 규칙, 스타일 가이드 확인
+$ npm run storybook
+
+# storybook 빌드
+$ npm run storybook
+
+# e2e 테스트 - 터미널에서 실행(젠킨스에서 이용)
+$ npm run e2e
+
+# e2e 웹 테스트 - 웹 브라우저에서 실행
+$ npm run e2e:open
 ```
 
    

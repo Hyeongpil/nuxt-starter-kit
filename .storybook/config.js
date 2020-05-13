@@ -24,7 +24,7 @@ addParameters({
     theme
   },
   readme: {
-    codeTheme: 'github'
+    codeTheme: 'a11y-dark'
   }
 })
 
